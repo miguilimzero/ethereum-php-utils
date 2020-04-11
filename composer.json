@@ -8,8 +8,8 @@
         "kornrunner/keccak": "^1.0",
         "kornrunner/secp256k1": "^0.1",
         "web3p/rlp": "^0.3",
-        "litvinjuan/ethereum-validator": "dev-master",
-        "kornrunner/ethereum-address": "dev-master"
+        "litvinjuan/ethereum-validator": "^1.0",
+        "kornrunner/ethereum-address": "^0.1"
     },
     "license": "MIT",
     "autoload": {
