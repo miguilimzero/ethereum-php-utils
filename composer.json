@@ -1,0 +1,19 @@
+{
+    "name": "srdante/ethereum-php-utils",
+    "description": "Simple tool for Ethereum wallet.",
+    "type": "library",
+    "require": {
+        "php": ">=7.2",
+        "simplito/elliptic-php": "^1.0.6",
+        "kornrunner/keccak": "^1.0",
+        "kornrunner/secp256k1": "^0.1",
+        "web3p/rlp": "^0.3"
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "SrDante\\": "src"
+        }
+    }
+}
