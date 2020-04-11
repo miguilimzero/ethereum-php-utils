@@ -12,7 +12,6 @@
         "kornrunner/ethereum-address": "dev-master"
     },
     "license": "MIT",
-    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "SrDante\\": "src"
