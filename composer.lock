@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bdf99111d525e5f05b61bc513a4de59",
+    "content-hash": "69df0191b6f5652c1267fcdf2ffeaaa4",
     "packages": [
         {
             "name": "fgrosse/phpasn1",
@@ -74,6 +74,92 @@
                 "x690"
             ],
             "time": "2018-03-31T08:32:19+00:00"
+        },
+        {
+            "name": "greensea/keccak",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greensea/php-keccak.git",
+                "reference": "75134808182adf6f3c04e90e20554d883e0c6ba4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greensea/php-keccak/zipball/75134808182adf6f3c04e90e20554d883e0c6ba4",
+                "reference": "75134808182adf6f3c04e90e20554d883e0c6ba4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~7",
+                "satooshi/php-coveralls": "~2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kornrunner\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "greensea",
+                    "homepage": "https://github.com/greensea/php-keccak"
+                }
+            ],
+            "description": "Pure PHP implementation of Keccak. Fork from kornrunner/php-keccak, support PHP 7.0",
+            "keywords": [
+                "keccak",
+                "sha-3"
+            ],
+            "time": "2018-05-02T05:31:11+00:00"
+        },
+        {
+            "name": "kornrunner/ethereum-address",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kornrunner/php-ethereum-address.git",
+                "reference": "8b56f1fba5c4ee0081eb4615b14e2f7ce26e338f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kornrunner/php-ethereum-address/zipball/8b56f1fba5c4ee0081eb4615b14e2f7ce26e338f",
+                "reference": "8b56f1fba5c4ee0081eb4615b14e2f7ce26e338f",
+                "shasum": ""
+            },
+            "require": {
+                "kornrunner/keccak": "^1.0",
+                "mdanter/ecc": "^0.5",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kornrunner\\Ethereum\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Momčilović",
+                    "email": "boris.momcilovic@gmail.com"
+                }
+            ],
+            "description": "Pure PHP Ethereum Address Generator / Validator",
+            "time": "2020-04-02T21:25:57+00:00"
         },
         {
             "name": "kornrunner/keccak",
@@ -167,6 +253,60 @@
                 "secp256k1"
             ],
             "time": "2019-01-16T17:01:51+00:00"
+        },
+        {
+            "name": "litvinjuan/ethereum-validator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/litvinjuan/ethereum-validator.git",
+                "reference": "a24e5de91f0d48192d4920007758472d479fe0b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/litvinjuan/ethereum-validator/zipball/a24e5de91f0d48192d4920007758472d479fe0b8",
+                "reference": "a24e5de91f0d48192d4920007758472d479fe0b8",
+                "shasum": ""
+            },
+            "require": {
+                "greensea/keccak": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "brainmaestro/composer-git-hooks": "^2.8",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "extra": {
+                "hooks": {
+                    "pre-commit": [
+                        "composer cs-fix"
+                    ],
+                    "pre-push": [
+                        "composer cs-check",
+                        "composer test"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "litvinjuan\\EthereumValidator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Juan Litvin",
+                    "email": "litvinjuan@gmail.com"
+                }
+            ],
+            "description": "PHP implementation to validate ethereum addresses",
+            "homepage": "https://github.com/litvinjuan/ethereum-validator",
+            "time": "2020-01-21T18:07:11+00:00"
         },
         {
             "name": "mdanter/ecc",
@@ -473,7 +613,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "litvinjuan/ethereum-validator": 20,
+        "kornrunner/ethereum-address": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

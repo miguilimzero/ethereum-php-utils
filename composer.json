@@ -7,7 +7,9 @@
         "simplito/elliptic-php": "^1.0.6",
         "kornrunner/keccak": "^1.0",
         "kornrunner/secp256k1": "^0.1",
-        "web3p/rlp": "^0.3"
+        "web3p/rlp": "^0.3",
+        "litvinjuan/ethereum-validator": "dev-master",
+        "kornrunner/ethereum-address": "dev-master"
     },
     "license": "MIT",
     "minimum-stability": "dev",
