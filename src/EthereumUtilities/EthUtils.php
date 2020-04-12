@@ -46,16 +46,16 @@ class EthUtils extends Util
     /**
      * Generate RAW transaction hash.
      *
-     * @param string $nonce
-     * @param string $gasPrice
-     * @param string $gasLimit
+     * @param int    $nonce
+     * @param float  $gasPrice
+     * @param int    $gasLimit
      * @param string $to
-     * @param string $value
+     * @param float  $value
      * @param string $data
      *
      * @return mixed
      */
-    public static function generateRawTransaction(string $nonce, string $gasPrice, string $gasLimit, string $to, string $value, string $data)
+    public static function generateRawTransaction(int $nonce, float $gasPrice, int $gasLimit, string $to, float $value, string $data)
     {
         $nonce    = dechex($nonce);
         $gasLimit = dechex($gasLimit);
@@ -77,11 +77,11 @@ class EthUtils extends Util
      */
     public static function generateData(string $to, float $value, int $decimals)
     {
-        return self::sha3('transfer(address,uint256)') . strtolower(self::stripZero($to)) . self::pad32Bytes(dechex($value * (10 ** $decimals)));
+        return substr(self::sha3('transfer(address,uint256)'), 0, 4 * 2) . self::pad32Bytes(strtolower(self::stripZero($to))) . self::pad32Bytes(dechex($value * (10 ** $decimals)));
     }
 
     /**
-     * Convert default hex to 32 length.
+     * Convert default hex to 64 length.
      *
      * @param string $data
      *
